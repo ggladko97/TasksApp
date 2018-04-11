@@ -1,0 +1,1 @@
+![alt text](https://github.com/ggladko97/TasksApp/tree/master/app/src/main/res/drawable/home_scr.PNG)
