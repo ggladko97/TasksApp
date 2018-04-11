@@ -5,4 +5,8 @@
     <string name="grocery_list">Grocery List</string>
     <string name="work_projects">Work Projects</string>
     <string name="title_activity_main">MainActivity</string>
+    <string name="add_new_task">Add New Task</string>
+    <string name="describe_a_task">Describe a task</string>
+    <string name="end_date_text">End date</string>
+    <string name="end_time_text">End Time</string>
 </resources>

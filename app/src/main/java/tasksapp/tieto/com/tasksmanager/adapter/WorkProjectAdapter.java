@@ -18,9 +18,6 @@ import tasksapp.tieto.com.tasksmanager.domain.Project;
 import tasksapp.tieto.com.tasksmanager.presenter.PresenterToAdapterListener;
 import tasksapp.tieto.com.tasksmanager.presenter.WorkProjectsPresenter;
 
-/**
- * Created by hladlyev on 09.04.2018.
- */
 
 public class WorkProjectAdapter extends RecyclerView.Adapter<WorkProjectAdapter.ViewHolder> {
 
@@ -60,7 +57,6 @@ public class WorkProjectAdapter extends RecyclerView.Adapter<WorkProjectAdapter.
 
             Log.i("OnBindVH", project.toString());
             //set not expended stuff invisible
-//            holder.llExpandLayout.setVisibility(View.GONE);
             holder.llExpandedButtons.setVisibility(View.GONE);
             holder.llExpandedTime.setVisibility(View.GONE);
 
