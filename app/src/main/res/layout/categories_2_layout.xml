@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:background="@drawable/customboarder"
+    android:gravity="center"
+    android:orientation="horizontal">
+
+    <LinearLayout
+        android:id="@+id/llWorkProj"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+
+        android:adjustViewBounds="true"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ibWorkProjects"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:background="#ffffff"
+            android:padding="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/img_bag" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:text="Work Projects"
+                android:textColor="@color/color_grey_bold"
+                android:textSize="7pt" />
+
+            <TextView
+                android:id="@+id/tvWorkProjects"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="55 tasks"
+                android:textColor="@color/color_grey_text" />
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llGrocList"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+
+        android:adjustViewBounds="false"
+
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ibGroceryList"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:padding="0dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="25dp"
+            android:src="@drawable/img_shop" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginStart="12dp"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:text="@string/grocery_list"
+                android:textColor="@color/color_grey_bold"
+                android:textSize="7pt" />
+
+            <TextView
+                android:id="@+id/tvGroceryList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 tasks"
+                android:textColor="@color/color_grey_text" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/customboarder"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <CheckBox
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cbIsDone"
+            android:layout_weight="1" />
+
+        <LinearLayout
+            android:id="@+id/llExpandLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="7"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvExpandList"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Call Mrs. Barbara"
+                android:textColor="#555160"
+                android:textSize="10pt" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Work projects"
+                android:textColor="@color/color_grey_text"
+                android:textSize="7pt" />
+        </LinearLayout>
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="#F5F6FB"
+            android:scaleType="centerInside"
+            android:id="@+id/ibCall"
+            android:src="@drawable/img_call" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llExpandedTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="#F5F6FB"
+            android:src="@drawable/img_calendar" />
+
+        <TextView
+            android:id="@+id/tvDateExp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="12 of March"
+            android:textColor="@color/color_grey_text"
+            android:textSize="9pt" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:background="#F5F6FB"
+            android:src="@drawable/img_clock" />
+
+        <TextView
+            android:id="@+id/tvTimeExp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="3"
+            android:text="9:40 AM"
+            android:textColor="@color/color_grey_text"
+            android:textSize="9pt" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llExpandedButtons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#F5F6FB"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_route_2" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#F5F6FB"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_route" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#F5F6FB"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_star" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#F5F6FB"
+            android:scaleType="fitCenter"
+            android:src="@drawable/img_attach" />
+    </LinearLayout>
+
+</LinearLayout>

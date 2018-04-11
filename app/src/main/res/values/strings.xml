@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">TasksManager</string>
+    <string name="hello_text">Hello</string>
+    <string name="personal_errands">Personal Errands</string>
+    <string name="grocery_list">Grocery List</string>
+    <string name="work_projects">Work Projects</string>
+    <string name="title_activity_main">MainActivity</string>
+</resources>
