@@ -1,13 +1,12 @@
 package tasksapp.tieto.com.tasksmanager.dao;
 
-import java.io.Serializable;
 import java.util.List;
 
 /**
  * Created by hladlyev on 09.04.2018.
  */
 
-public interface IGenericDao<T extends Serializable> {
+public interface IGenericDao<T> {
 
     T findOne(final long id);
 
@@ -15,7 +14,7 @@ public interface IGenericDao<T extends Serializable> {
 
     void create(final T entity);
 
-    T update(final T entity);
+    void update(final T entity);
 
     void delete(final T entity);
 

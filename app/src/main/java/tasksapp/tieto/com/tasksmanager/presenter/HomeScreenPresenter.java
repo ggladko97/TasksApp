@@ -1,18 +1,23 @@
 package tasksapp.tieto.com.tasksmanager.presenter;
 
+import android.app.Application;
 import android.content.Context;
 
 import tasksapp.tieto.com.tasksmanager.HomeActivity;
-import tasksapp.tieto.com.tasksmanager.dao.UserDataDao;
+import tasksapp.tieto.com.tasksmanager.dao.UserDataDaoService;
 
 
 public class HomeScreenPresenter implements HomeScreenContract.Presenter {
 
     private HomeActivity view;
-    private UserDataDao dao;
+    private UserDataDaoService dao;
 
     public HomeScreenPresenter(Context ctx) {
-        dao = new UserDataDao(ctx);
+        dao = new UserDataDaoService(ctx);
+    }
+
+    public HomeScreenPresenter(Context ctx, Application application) {
+        dao = new UserDataDaoService(ctx, application);
     }
 
     @Override

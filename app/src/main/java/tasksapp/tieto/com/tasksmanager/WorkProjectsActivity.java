@@ -27,8 +27,8 @@ public class WorkProjectsActivity extends AppCompatActivity implements WorkProje
         setContentView(R.layout.activity_work_projects);
         host = findViewById(R.id.tabHost);
         rcView = findViewById(R.id.rcView);
-        adapter = new WorkProjectAdapter(rcView);
-        presenter = new WorkProjectsPresenter();
+        adapter = new WorkProjectAdapter(rcView, this.getApplication());
+        presenter = new WorkProjectsPresenter(getApplication());
         presenter.bindView(WorkProjectsActivity.this);
         initHost(host);
 

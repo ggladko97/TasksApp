@@ -41,53 +41,63 @@
 
 
     <Spinner
+        android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/customboarder"
-        android:gravity="left|center_vertical"
         android:layout_marginTop="25dp"
-        android:id="@+id/spinner" />
+        android:background="@drawable/customboarder"
+        android:gravity="left|center_vertical" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/customboarder"
         android:orientation="horizontal">
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:id="@+id/etTaskDescription"
             android:hint="@string/describe_a_task"
-            android:textSize="9pt"
-            android:layout_weight="6"
-            />
+            android:textSize="9pt" />
+
+
+
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:src="@drawable/clear_text"
             android:adjustViewBounds="true"
             android:background="#F5F6FB"
-            android:layout_gravity="center_vertical"/>
+            android:id="@+id/ibCancelTaskDescription"
+            android:src="@drawable/clear_text" />
     </LinearLayout>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/customboarder"
         android:orientation="horizontal">
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_weight="6"
+            android:id="@+id/etTaskEndDate"
             android:hint="@string/end_date_text"
-            android:textSize="9pt"
-            android:layout_weight="6"
-            />
+            android:textSize="9pt" />
+
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:src="@drawable/clear_text"
             android:adjustViewBounds="true"
             android:background="#F5F6FB"
-            android:layout_gravity="center_vertical"/>
+            android:id="@+id/ibCancelTaskEndDate"
+            android:src="@drawable/clear_text" />
     </LinearLayout>
 
     <LinearLayout
@@ -95,41 +105,44 @@
         android:layout_height="wrap_content"
         android:background="@drawable/customboarder"
         android:orientation="horizontal">
+
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/end_time_text"
-            android:textSize="9pt"
             android:layout_weight="6"
-            />
+            android:id="@+id/etTaskEndTime"
+            android:hint="@string/end_time_text"
+            android:textSize="9pt" />
+
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:src="@drawable/clear_text"
             android:adjustViewBounds="true"
             android:background="#F5F6FB"
-            android:layout_gravity="center_vertical"/>
+            android:id="@+id/ibCancelTaskEndTime"
+            android:src="@drawable/clear_text" />
     </LinearLayout>
 
 
-    <include layout="@layout/add_buttons_layout"
-        />
+    <include layout="@layout/add_buttons_layout" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="15dp"
         android:gravity="center">
+
         <ImageButton
+            android:id="@+id/btnAddTaskOk"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@drawable/btn_ad_task"
-
+            android:layout_gravity="center_vertical"
             android:adjustViewBounds="true"
-            android:cropToPadding="true"
-            android:layout_gravity="center_vertical"/>
+            android:background="@drawable/btn_ad_task"
+            android:cropToPadding="true" />
     </LinearLayout>
-
 
 
 </LinearLayout>

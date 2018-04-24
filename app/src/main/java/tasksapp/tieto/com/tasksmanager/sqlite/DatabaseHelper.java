@@ -5,7 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-import tasksapp.tieto.com.tasksmanager.domain.User;
 import tasksapp.tieto.com.tasksmanager.domain.UserData;
 
 /**
@@ -46,8 +45,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         ContentValues values = new ContentValues();
 //        values.put("id", userData.getUser().getUserId());
-        values.put("userName", userData.getUser().getUserName());
-        values.put("userPassword", userData.getUser().getUserPassword());
+//        values.put("userName", userData.getUser().getUserName());
+//        values.put("userPassword", userData.getUser().getUserPassword());
 
         // insert row
         long userData_id = db.insert("Users", null, values);

@@ -1,5 +1,6 @@
 package tasksapp.tieto.com.tasksmanager.presenter;
 
+import android.app.Application;
 import android.util.Log;
 
 import java.util.List;
@@ -20,13 +21,13 @@ public class WorkProjectsPresenter implements WorkProjectsContract.Presenter, Pr
     private WorkProjectAdapter adapter;
     private static WorkProjectDao dao;
 
-    public WorkProjectsPresenter() {
-        dao = new WorkProjectDao();
+    public WorkProjectsPresenter(Application app) {
+        dao = new WorkProjectDao(app);
     }
 
-    public WorkProjectsPresenter(WorkProjectAdapter adapter) {
+    public WorkProjectsPresenter(WorkProjectAdapter adapter, Application app) {
         this.adapter = adapter;
-        dao = new WorkProjectDao();
+        dao = new WorkProjectDao(app);
     }
 
 //    @Override
@@ -51,7 +52,7 @@ public class WorkProjectsPresenter implements WorkProjectsContract.Presenter, Pr
     }
     public void laodCompletedData() {
         List<Project> projList = dao.findAll();
-        view.updateWPList(projList.stream().filter(Project::getDone).collect(Collectors.toList()));
+        view.updateWPList(projList.stream().filter(Project::getIsDone).collect(Collectors.toList()));
     }
 
     @Override
@@ -62,7 +63,7 @@ public class WorkProjectsPresenter implements WorkProjectsContract.Presenter, Pr
             Log.e("MockDB",  "project with id " + project.getId() + " is null in Db");
         }
         if (prjToUpdate != null) {
-            prjToUpdate.setDone(true);
+            prjToUpdate.setIsDone(true);
         }
         dao.update(prjToUpdate);
     }

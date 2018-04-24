@@ -1,21 +1,44 @@
 package tasksapp.tieto.com.tasksmanager.domain;
 
 
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.Property;
+import org.greenrobot.greendao.annotation.Generated;
+
+@Entity(nameInDb = "user")
 public class User {
-    private Integer userId;
+
+    @Id(autoincrement = true)
+    private Long id;
+
+    @Property(nameInDb = "userName")
     private String userName;
+
+    @Property(nameInDb = "userPassword")
     private String userPassword;
 
-    public Integer getUserId() {
-        return userId;
+    @Generated(hash = 691383882)
+    public User(Long id, String userName, String userPassword) {
+        this.id = id;
+        this.userName = userName;
+        this.userPassword = userPassword;
     }
 
-    public void setUserId(Integer userId) {
-        this.userId = userId;
+    @Generated(hash = 586692638)
+    public User() {
+    }
+
+    public Long getId() {
+        return this.id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getUserName() {
-        return userName;
+        return this.userName;
     }
 
     public void setUserName(String userName) {
@@ -23,10 +46,11 @@ public class User {
     }
 
     public String getUserPassword() {
-        return userPassword;
+        return this.userPassword;
     }
 
     public void setUserPassword(String userPassword) {
         this.userPassword = userPassword;
     }
+
 }

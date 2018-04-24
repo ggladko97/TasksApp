@@ -5,7 +5,7 @@ import android.content.Context;
 import org.junit.Before;
 import org.junit.Test;
 
-import tasksapp.tieto.com.tasksmanager.dao.UserDataDao;
+import tasksapp.tieto.com.tasksmanager.dao.UserDataDaoService;
 import tasksapp.tieto.com.tasksmanager.domain.User;
 import tasksapp.tieto.com.tasksmanager.domain.UserData;
 
@@ -18,13 +18,13 @@ import static org.mockito.Mockito.mock;
 public class DatabaseHelperTest {
 
 //    private DatabaseHelper dbHelper;
-    private UserDataDao dao;
+    private UserDataDaoService dao;
 
     @Before
     public void setUp() throws Exception {
         Context context = mock(Context.class);
 //        dbHelper = new DatabaseHelper(context);
-        dao = new UserDataDao(context);
+        dao = new UserDataDaoService(context);
 
     }
 

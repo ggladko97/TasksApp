@@ -1,20 +1,53 @@
 package tasksapp.tieto.com.tasksmanager.domain;
 
-import java.io.Serializable;
+import org.greenrobot.greendao.annotation.Entity;
+import org.greenrobot.greendao.annotation.Id;
+import org.greenrobot.greendao.annotation.NotNull;
+import org.greenrobot.greendao.annotation.Property;
+import org.greenrobot.greendao.annotation.Generated;
+
 
 /**
  * Created by hladlyev on 09.04.2018.
  */
+@Entity(nameInDb = "project")
+public class Project {
 
-public class Project implements Serializable {
+    @Id(autoincrement = true)
     private Long id;
+
+    @NotNull
+    @Property(nameInDb = "title")
     private String title;
+
+
+    @Property(nameInDb = "endDate")
     private String endDate;
+
+
+    @Property(nameInDb = "endTime")
     private String endTime;
+
+    @NotNull
+    @Property(nameInDb = "isDone")
     private Boolean isDone;
 
+    @Generated(hash = 1369236257)
+    public Project(Long id, @NotNull String title, String endDate, String endTime,
+            @NotNull Boolean isDone) {
+        this.id = id;
+        this.title = title;
+        this.endDate = endDate;
+        this.endTime = endTime;
+        this.isDone = isDone;
+    }
+
+    @Generated(hash = 1767516619)
+    public Project() {
+    }
+
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -22,7 +55,7 @@ public class Project implements Serializable {
     }
 
     public String getTitle() {
-        return title;
+        return this.title;
     }
 
     public void setTitle(String title) {
@@ -30,7 +63,7 @@ public class Project implements Serializable {
     }
 
     public String getEndDate() {
-        return endDate;
+        return this.endDate;
     }
 
     public void setEndDate(String endDate) {
@@ -38,30 +71,20 @@ public class Project implements Serializable {
     }
 
     public String getEndTime() {
-        return endTime;
+        return this.endTime;
     }
 
     public void setEndTime(String endTime) {
         this.endTime = endTime;
     }
 
-    public Boolean getDone() {
-        return isDone;
+    public Boolean getIsDone() {
+        return this.isDone;
     }
 
-    public void setDone(Boolean done) {
-        isDone = done;
+    public void setIsDone(Boolean isDone) {
+        this.isDone = isDone;
     }
 
-    @Override
-    public String toString() {
 
-        return "Project{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", endDate='" + endDate + '\'' +
-                ", endTime='" + endTime + '\'' +
-                ", isDone=" + isDone +
-                '}';
-    }
 }

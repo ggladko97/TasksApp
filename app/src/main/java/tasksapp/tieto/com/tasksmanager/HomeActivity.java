@@ -32,6 +32,7 @@ public class HomeActivity extends AppCompatActivity implements HomeScreenContrac
 //        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
 //        setSupportActionBar(toolbar);
         init();
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -42,7 +43,7 @@ public class HomeActivity extends AppCompatActivity implements HomeScreenContrac
             }
         });
 
-        presenter = new HomeScreenPresenter(HomeActivity.this);
+        presenter = new HomeScreenPresenter(HomeActivity.this, getApplication());
         presenter.bindView(HomeActivity.this);
         presenter.loadData();
 
@@ -77,7 +78,7 @@ public class HomeActivity extends AppCompatActivity implements HomeScreenContrac
 
     @Override
     public void loadMainScreen(UserData allData) {
-        tvUserName.setText(String.valueOf(allData.getUser().getUserName()));
+//        tvUserName.setText(String.valueOf(allData.getUser().getUserName()));
         tvDate.setText(String.valueOf(new SimpleDateFormat("yyyy.MM.dd").format(new Date())));
         tvAllTasksSize.setText(String.valueOf(allData.getAllCreatedTasks()));
         tvCompletedTasksSize.setText(String.valueOf(allData.getAllCompletedTasks()));

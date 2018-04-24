@@ -1,5 +1,6 @@
 package tasksapp.tieto.com.tasksmanager.adapter;
 
+import android.app.Application;
 import android.support.design.widget.Snackbar;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -23,12 +24,13 @@ public class WorkProjectAdapter extends RecyclerView.Adapter<WorkProjectAdapter.
 
     List<Project> projectList = null;
     PresenterToAdapterListener callback;
+    Application app;
 
     public WorkProjectAdapter() {
     }
 
 
-    public WorkProjectAdapter(RecyclerView rcView) {
+    public WorkProjectAdapter(RecyclerView rcView, Application application) {
 
     }
 
@@ -66,13 +68,13 @@ public class WorkProjectAdapter extends RecyclerView.Adapter<WorkProjectAdapter.
             holder.ibCall
                     .setOnClickListener(l -> Snackbar.make(holder.itemView, "Functionality not supported yet", Snackbar.LENGTH_LONG)
                             .setAction("Action", null).show());
-            if (project.getDone()) {
+            if (project.getIsDone()) {
                 holder.cbIsDone.setChecked(true);
             } else {
                 holder.cbIsDone.setOnCheckedChangeListener((buttonView, isChecked) -> {
                     if (isChecked) {
                         Log.i("Checkbox", "checked " + project);
-                        callback = new WorkProjectsPresenter(WorkProjectAdapter.this);
+                        callback = new WorkProjectsPresenter(WorkProjectAdapter.this, app);
                         callback.updateProject(project);
                     } else {
                         Log.i("Checkbox", "UNchecked");
