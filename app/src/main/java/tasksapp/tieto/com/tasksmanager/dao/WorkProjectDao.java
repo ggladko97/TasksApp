@@ -39,9 +39,6 @@ public class WorkProjectDao implements IGenericDao<Project> {
 
     public WorkProjectDao(Application app) {
         dao = ((TasksApp) app).getDaoSession().getProjectDao();
-//        if (mockProjects.isEmpty() || mockProjects == null) {
-//            initMockProj();
-//        }
     }
 
     @Override
@@ -81,11 +78,11 @@ public class WorkProjectDao implements IGenericDao<Project> {
 
     @Override
     public void delete(Project entity) {
-
+        dao.delete(entity);
     }
 
     @Override
     public void deleteById(long entityId) {
-
+        dao.deleteByKey(entityId);
     }
 }

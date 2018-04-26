@@ -74,7 +74,7 @@ public class WorkProjectAdapter extends RecyclerView.Adapter<WorkProjectAdapter.
                 holder.cbIsDone.setOnCheckedChangeListener((buttonView, isChecked) -> {
                     if (isChecked) {
                         Log.i("Checkbox", "checked " + project);
-                        callback = new WorkProjectsPresenter(WorkProjectAdapter.this, app);
+                        callback = new WorkProjectsPresenter(app);
                         callback.updateProject(project);
                     } else {
                         Log.i("Checkbox", "UNchecked");

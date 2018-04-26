@@ -7,33 +7,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import tasksapp.tieto.com.tasksmanager.WorkProjectsActivity;
-import tasksapp.tieto.com.tasksmanager.adapter.WorkProjectAdapter;
 import tasksapp.tieto.com.tasksmanager.dao.WorkProjectDao;
 import tasksapp.tieto.com.tasksmanager.domain.Project;
 
-/**
- * Created by hladlyev on 09.04.2018.
- */
 
 public class WorkProjectsPresenter implements WorkProjectsContract.Presenter, PresenterToAdapterListener {
 
     private WorkProjectsActivity view;
-    private WorkProjectAdapter adapter;
     private static WorkProjectDao dao;
 
     public WorkProjectsPresenter(Application app) {
         dao = new WorkProjectDao(app);
     }
-
-    public WorkProjectsPresenter(WorkProjectAdapter adapter, Application app) {
-        this.adapter = adapter;
-        dao = new WorkProjectDao(app);
-    }
-
-//    @Override
-//    public void bindView(HomeScreenContract.View view) {
-//        this.view = (WorkProjectsActivity) view;
-//    }
 
     @Override
     public void bindView(WorkProjectsContract.View view) {

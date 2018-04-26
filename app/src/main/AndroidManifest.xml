@@ -20,7 +20,9 @@
         <activity android:name=".WorkProjectsActivity" />
         <activity android:name=".ContentActivity" />
         <activity android:name=".AdditionActivity" />
-
+        <meta-data android:name="DATABASE"
+            android:value="greendao_demo.db"/>
     </application>
+
 
 </manifest>

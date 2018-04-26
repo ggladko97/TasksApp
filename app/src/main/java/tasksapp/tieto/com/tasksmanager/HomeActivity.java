@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity implements HomeScreenContrac
             }
         });
 
-        presenter = new HomeScreenPresenter(HomeActivity.this, getApplication());
+        presenter = new HomeScreenPresenter(getApplication());
         presenter.bindView(HomeActivity.this);
         presenter.loadData();
 

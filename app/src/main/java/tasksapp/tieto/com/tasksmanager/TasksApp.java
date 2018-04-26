@@ -2,6 +2,11 @@ package tasksapp.tieto.com.tasksmanager;
 
 import android.app.Application;
 
+import org.greenrobot.greendao.AbstractDao;
+import org.greenrobot.greendao.database.Database;
+
+import java.util.Collection;
+
 import tasksapp.tieto.com.tasksmanager.domain.DaoMaster;
 import tasksapp.tieto.com.tasksmanager.domain.DaoSession;
 import tasksapp.tieto.com.tasksmanager.domain.Project;
@@ -20,10 +25,15 @@ public class TasksApp extends Application {
     @Override
     public void onCreate() {
         super.onCreate();
-        mDaoSession =
-                new DaoMaster(new DbOpenHelper(this, "greendao_demo.db").getWritableDb()).newSession();
+        DbOpenHelper dbOpenHelper = new DbOpenHelper(this, "greendao_demo.db");
+        Database writableDatabase = dbOpenHelper.getWritableDb();
+        DaoMaster daoMaster = new DaoMaster(writableDatabase);
+        DaoMaster.createAllTables(dbOpenHelper.getWritableDb(), true);
+
+        mDaoSession = daoMaster.newSession();
 
 
+        Collection<AbstractDao<?, ?>> allDaos = mDaoSession.getAllDaos();
 
         Project project = new Project();
         project.setId(null);
@@ -33,19 +43,19 @@ public class TasksApp extends Application {
         project.setEndTime("9-00 AM");
 
 
-        User user = new User(null, "Yevhenii", "abc");
+        User user = new User();
+        user.setId(null);
+        user.setUserPassword("abc");
+        user.setUserName("Yevhenii");
 
 
+        mDaoSession.getProjectDao().insert(project);
 
+        long insert = mDaoSession.getUserDao().insert(user);
+        UserData userData = new UserData(null, insert, 5, 5, 5, 5, 5, 5, 5);
 
-        // USER CREATION FOR DEMO PURPOSE
-        if (mDaoSession.getProjectDao().loadAll().size() == 0) {
-            mDaoSession.getProjectDao().insert(project);
-            long insert = mDaoSession.getUserDao().insert(user);
-            UserData userData = new UserData(null, insert, 5, 5, 5, 5, 5, 5, 5);
-//            userData.setUserId(insert);
-            mDaoSession.getUserDataDao().insert(userData);
-        }
+        mDaoSession.getUserDataDao().insert(userData);
+
     }
 
     public DaoSession getDaoSession() {
